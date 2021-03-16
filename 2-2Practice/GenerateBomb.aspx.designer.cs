@@ -21,5 +21,18 @@ namespace _2_2Practice
         /// 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        int value(int r, int c, int[] input)
+        {
+            int num = r * 10 + c;
+            int v = 0;
+            for (int i = 0; i < 10; i++)
+            {
+                if (num == input[i])
+                {
+                   v = 88;
+                }
+            }
+            return v;
+        }
     }
 }
