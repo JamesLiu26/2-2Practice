@@ -21,18 +21,31 @@ namespace _2_2Practice
         /// 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        int value(int r, int c, int[] input)
+        int value(int r, int c, int[] arr)
         {
             int num = r * 10 + c;
             int v = 0;
-            for (int i = 0; i < 10; i++)
-            {
-                if (num == input[i])
-                {
+            for (int i = 0; i < 10; i++) {
+                if (num == arr[i]) {
                    v = 88;
                 }
             }
             return v;
+        }
+
+        void boom(int r,int c,int[,] arr)
+        {
+            for (int i = r - 1; i <= r + 1; i++) {
+                if (i != -1 && i != 10) { 
+                    for (int j = c - 1; j <= c + 1; j++) {
+                        if (j != -1 && j != 10) {
+                            if (arr[i, j] != 88) {
+                                arr[i, j] += 1;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
