@@ -21,6 +21,15 @@ namespace _2_2Practice
         /// 若要修改，請將欄位宣告從設計工具檔案移至程式碼後置檔案。
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        
+        //判斷地雷
+        /*
+        num代表目前的所在位置
+        如果num=input陣列裡的地雷位置
+        就把值改成88(地雷)再回傳
+        若不是則傳回0
+        */
         int value(int r, int c, int[] arr)
         {
             int num = r * 10 + c;
@@ -32,13 +41,22 @@ namespace _2_2Practice
             }
             return v;
         }
-
+        
+        //判斷地雷周圍的數字
+        /*
+        假設地雷位置為13，那row=1,col=3
+        所以[0,2]~[0,4] [1,2] [1,4] [2,2]~[2,4]都要顯示數字
+        [row,col]的範圍是從[row-1,col-1]到[row+1,col+1]
+        */
         void boom(int r,int c,int[,] arr)
         {
             for (int i = r - 1; i <= r + 1; i++) {
-                if (i != -1 && i != 10) { 
+                //當row的值不為-1 or 10就做，因為-1跟10超出範圍
+                if (i != -1 && i != 10) {                    
                     for (int j = c - 1; j <= c + 1; j++) {
+                        //當col的值不為-1 or 10就做，因為-1跟10超出範圍
                         if (j != -1 && j != 10) {
+                            //如果不是地雷所在位置，數字加1
                             if (arr[i, j] != 88) {
                                 arr[i, j] += 1;
                             }
