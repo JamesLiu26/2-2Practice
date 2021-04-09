@@ -11,16 +11,25 @@ namespace _2_2Practice
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int[,] Bomb = new int[10,10];
-            int[] input = new int[10]{ 0, 7, 13, 28, 44, 62, 74, 75, 87, 90 };
-            int r, c;
+            //創建10X10二維陣列
+            int[,] Bomb = new int[10,10]; 
             
+            //創建一個擺地雷位置的array
+            int[] input = new int[10]{ 0, 7, 13, 28, 44, 62, 74, 75, 87, 90 };
+            
+            //rows cols
+            int r, c; 
+            
+            
+            //判斷地雷位置 
             for (r = 0; r < 10; r++) {
                 for (c = 0; c < 10; c++) {
                     Bomb[r,c]=value(r,c,input);
                 }
             }
-
+            
+            
+            //判斷地雷周圍的數字
             for (r = 0; r < 10; r++) {
                 for (c = 0; c < 10; c++) {
                     if (Bomb[r, c] == 88) {
@@ -29,6 +38,7 @@ namespace _2_2Practice
                 }
             }
             
+            //以table方式印出
             Response.Write("<table border='1' style='text-align:center;' >");
             for (r = 0; r < 10; r++)
             {
