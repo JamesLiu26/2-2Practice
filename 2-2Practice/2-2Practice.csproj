@@ -70,6 +70,7 @@
     <Content Include="Default.aspx" />
     <Content Include="GenerateBomb.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="ReverseInt.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +92,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReverseInt.aspx.cs">
+      <DependentUpon>ReverseInt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReverseInt.aspx.designer.cs">
+      <DependentUpon>ReverseInt.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

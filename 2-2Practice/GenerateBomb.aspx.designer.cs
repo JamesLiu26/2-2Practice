@@ -51,10 +51,10 @@ namespace _2_2Practice
         void boom(int r,int c,int[,] arr)
         {
             for (int i = r - 1; i <= r + 1; i++) {
-                //當row的值不為-1 or 10就做，因為-1跟10超出範圍
+                //當row的值不為-1 and 10就做，因為-1跟10超出範圍
                 if (i != -1 && i != 10) {                    
                     for (int j = c - 1; j <= c + 1; j++) {
-                        //當col的值不為-1 or 10就做，因為-1跟10超出範圍
+                        //當col的值不為-1 and 10就做，因為-1跟10超出範圍
                         if (j != -1 && j != 10) {
                             //如果不是地雷所在位置，數字加1
                             if (arr[i, j] != 88) {
